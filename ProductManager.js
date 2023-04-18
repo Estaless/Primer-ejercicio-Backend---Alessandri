@@ -6,15 +6,15 @@ class ProductManager {
         this.productos = [];
     }
 
-    getProductos = () => {
-        console.log(this.productos);
-
+    getProductos ()  {
+        //console.log(this.productos);
+        return this.productos;
     };
 
     getProductById = (id) => {
-        const idx = this.products.findIndex((product) => product.id === id);
+        const idx = this.productos.findIndex((product) => product.id === id);
         if (idx !== -1) {
-          console.log(this.products[idx]);
+          console.log(this.productos[idx]);
         } else {
           console.log("Not found");
         }
@@ -33,7 +33,7 @@ class ProductManager {
 
         let filtro = this.productos.filter((product)=> product.code === code)
         if(filtro.lenght > 0){
-            console.log("El code ya existe")
+            console.log("El codigo ya existe")
             return;
         }
 
@@ -71,11 +71,11 @@ class ProductManager {
 //pruebas
 
 const productManager = new ProductManager();
-productManager()
+
 productManager.agregarProduct("producto prueba", "Este es un producto prueba", 200, "sin imagen", "abc123",25)
 productManager.agregarProduct("chau", "Francia", 40, "sin imagen", 5050, 20)
 productManager.agregarProduct("Hola", "Argentina", 50, "sin imagen", 5050,20)
 productManager.agregarProduct("producto prueba", "Este es un producto prueba", 200, "sin imagen", "abc123",25)
-productManager.getProductById(2)
+
 
 console.log(productManager.getProductos());
